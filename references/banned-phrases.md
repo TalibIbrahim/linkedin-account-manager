@@ -17,7 +17,7 @@ Treat this as a living list, not a fixed blocklist. LinkedIn clichés rotate —
 - Fake epiphanies ("And then it hit me...")
 - Filler rule-of-three lists (three vague items with no real content, just for rhythm)
 - Rhetorical-question hooks used only to bait comments, not because the question is genuinely open
-- Em-dash-heavy sentence chains used as a crutch instead of varying sentence length
+- Em dashes, period. Don't use them anywhere, not just "heavy" use — split into two sentences, use a comma, or use `|`
 - "It's not X, it's Y" parallelism used more than once in a single post
 - Excessive signposting ("Here's the thing:", "The truth is:", "Let's be honest:")
 

@@ -100,26 +100,37 @@ def add_text_box(slide, shape_spec):
         run.font.color.rgb = hex_to_rgb(shape_spec.get("color", "#111111"))
 
 
-def add_rect(slide, shape_spec):
-    rect = slide.shapes.add_shape(
-        MSO_SHAPE.RECTANGLE,
+AUTOSHAPE_TYPES = {
+    "rect": MSO_SHAPE.RECTANGLE,
+    "rounded_rect": MSO_SHAPE.ROUNDED_RECTANGLE,
+    "oval": MSO_SHAPE.OVAL,
+}
+
+
+def add_autoshape(slide, shape_spec):
+    shape_type = AUTOSHAPE_TYPES[shape_spec["type"]]
+    shape = slide.shapes.add_shape(
+        shape_type,
         px(shape_spec["x_px"]),
         px(shape_spec["y_px"]),
         px(shape_spec["w_px"]),
         px(shape_spec["h_px"]),
     )
-    rect.fill.solid()
-    rect.fill.fore_color.rgb = hex_to_rgb(shape_spec.get("fill_color", "#000000"))
+    shape.fill.solid()
+    shape.fill.fore_color.rgb = hex_to_rgb(shape_spec.get("fill_color", "#000000"))
     if shape_spec.get("line_color"):
-        rect.line.color.rgb = hex_to_rgb(shape_spec["line_color"])
-        rect.line.width = Pt(shape_spec.get("line_width_pt", 1))
+        shape.line.color.rgb = hex_to_rgb(shape_spec["line_color"])
+        shape.line.width = Pt(shape_spec.get("line_width_pt", 1))
     else:
-        rect.line.fill.background()
+        shape.line.fill.background()
+    shape.shadow.inherit = False
 
 
 SHAPE_BUILDERS = {
     "text": add_text_box,
-    "rect": add_rect,
+    "rect": add_autoshape,
+    "rounded_rect": add_autoshape,
+    "oval": add_autoshape,
 }
 
 

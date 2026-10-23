@@ -1,36 +1,27 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+# Default-deny: this repo is the skill template only. Nothing is tracked
+# unless explicitly allowed below — so any personal file (state, leads,
+# generated .pptx/.docx deliverables, screenshots, anything created while
+# actually using the skill on a real account) is excluded automatically,
+# including file types nobody thought to list here yet.
+*
 
-# Virtual environments
-venv/
-.venv/
-ENV/
+# Allow directories so git will look inside them
+!/references/
+!/scripts/
 
-# Environment variables & secrets
+# Allow the actual skill template files
+!/.gitignore
+!/README.md
+!/SKILL.md
+!/references/**/*.md
+!/scripts/**/*.py
+
+# Re-exclude build/lock artifacts that could appear inside allowed dirs
+**/__pycache__/
+**/*.py[cod]
+~$*
+.DS_Store
+Thumbs.db
 .env
 .env.*
 !.env.example
-
-# OS files
-.DS_Store
-Thumbs.db

@@ -3,7 +3,7 @@
 ## Onboarding (ask in ONE short message; skip what's known)
 - **Offer:** what you build, for whom (client type, industry, company size, region), preferred project size
 - **Proof:** 2-4 real projects: problem, stack, outcome, live link, repo
-- **Profile today:** headline, About, Featured, follower/connection count (pasted text or screenshots; LinkedIn pages can't be fetched)
+- **Profile today:** headline, About, Featured, follower/connection count (pasted text or screenshots are the reliable source — `web_fetch` on a LinkedIn profile URL is unreliable: it may return a partial, login-gated snapshot, or fail outright with an HTTP 999 bot-block, especially for lower-traffic profiles that aren't cached. Try it if useful, but never block on it and never treat a failed/partial fetch as "profile looks fine" — always ask the user to paste or screenshot if the fetch doesn't come back clean)
 - **Capacity:** hours/week for LinkedIn, hours/week available for client work, target monthly income or number of projects
 - **Constraints:** timezone, languages, topics/clients to avoid, tone
 Then play it back in 5 lines and confirm. Set the starting stage.
